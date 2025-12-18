@@ -13,21 +13,21 @@ group project
 
 系統架構  
 元件層級     ||程式碼對應   
-Client 介面層  RPSClientGUI  
-Client 網路層  receive_loop  
-Server 大廳層  if __name__ == '__main__'  
-Server 配對層  matchmaking_loop (執行緒)  
-Server 遊戲層  class GameRoom  
-Server 處理層  handle_player (執行緒)  
+**Client 介面層**  RPSClientGUI  
+**Client 網路層**  receive_loop  
+**Server 大廳層**  if __name__ == '__main__'  
+**Server 配對層**  matchmaking_loop (執行緒)  
+**Server 遊戲層**  class GameRoom  
+**Server 處理層**  handle_player (執行緒)  
 
-核心職責  || 說明重點  
+**核心職責  || 說明重點**  
 
-呈現與輸入  主執行緒只負責畫圖和處理按鈕點擊，保證介面永不卡死。  
-非阻塞接收  獨立執行緒在背景等待 Server 資料，收到資料後通知主執行緒更新畫面。  
-連線接入  只負責接受 TCP 連線，並將連線物件安全地放入 waiting_queue。  
-自動配對  在背景持續監控隊列，是整個系統的「心跳」。是從單機版升級到多房間版的關鍵。  
-狀態封裝  每個實例都是一個獨立的房間，負責管理該房間內的 moves 和 lock，確保多組人玩遊戲時資料不混淆。  
-指令執行  每個玩家專屬的監聽執行緒，收到出拳指令 (Type 3) 後觸發 judge_and_respond 函式。  
+**呈現與輸入**  主執行緒只負責畫圖和處理按鈕點擊，保證介面永不卡死。  
+**非阻塞接收**  獨立執行緒在背景等待 Server 資料，收到資料後通知主執行緒更新畫面。  
+**連線接入**  只負責接受 TCP 連線，並將連線物件安全地放入 waiting_queue。  
+**自動配對**  在背景持續監控隊列，是整個系統的「心跳」。是從單機版升級到多房間版的關鍵。  
+**狀態封裝**  每個實例都是一個獨立的房間，負責管理該房間內的 moves 和 lock，確保多組人玩遊戲時資料不混淆。  
+**指令執行**  每個玩家專屬的監聽執行緒，收到出拳指令 (Type 3) 後觸發 judge_and_respond 函式。  
 
 
 協定設計
