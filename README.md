@@ -44,11 +44,11 @@ Server 處理層  handle_player (執行緒)
   Type 8 (Timeout): [新功能] 客戶端回報倒數逾時 (Client -> Server)。
 
 	範例
-玩家 Alice 登入並出拳「石頭」，擊敗出「剪刀」的對手。
-客戶端 (Alice): {"type": 1, "nickname": "Alice"} (說明: Alice 連線並傳送暱稱)
-伺服器: {"type": 2, "message": "Game Start! 輸入 rock, paper 或 scissors"} (說明: 伺服器配對成功，通知遊戲開始)
-客戶端 (Alice): {"type": 3, "nickname": "Alice", "message": "rock"} (說明: Alice 決定出石頭)
-伺服器: {"type": 4, "result": "You Win!", "opponent_move": "scissors"} (說明: 伺服器判定 Alice 獲勝，並告知對手出了剪刀)
+	玩家 Alice 登入並出拳「石頭」，擊敗出「剪刀」的對手。
+	客戶端 (Alice): {"type": 1, "nickname": "Alice"} (說明: Alice 連線並傳送暱稱)
+	伺服器: {"type": 2, "message": "Game Start! 輸入 rock, paper 或 scissors"} (說明: 伺服器配對成功，通知遊戲開始)
+	客戶端 (Alice): {"type": 3, "nickname": "Alice", "message": "rock"} (說明: Alice 決定出石頭)
+	伺服器: {"type": 4, "result": "You Win!", "opponent_move": "scissors"} (說明: 伺服器判定 Alice 獲勝，並告知對手出了剪刀)
 
 安裝與執行
 需求
