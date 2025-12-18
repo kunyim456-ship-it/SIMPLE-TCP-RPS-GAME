@@ -11,7 +11,7 @@ group project
 - ✅ [多人多組連線]  
 - ✅ [功能2]  
 
-系統架構
+系統架構  
 元件層級     ||程式碼對應   
 Client 介面層  RPSClientGUI  
 Client 網路層  receive_loop  
